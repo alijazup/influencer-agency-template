@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://strongfluence.com/sitemap.xml

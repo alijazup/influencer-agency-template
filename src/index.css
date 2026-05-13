@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+/* --- GLOBAL STYLES --- */
+:root {
+  --mouse-x-pct: 50%;
+  /* Global variable for mouse X position */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #020202;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Only hide cursor on devices with a mouse — keep system cursor on touch/mobile */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+h1,
+h2,
+h3,
+.brand-font {
+  font-family: "Syne", sans-serif;
+}
+
+/* Canvas Container */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 2s ease-out;
+}
+
+#canvas-container.loaded {
+  opacity: 1;
+}
+
+/* Gradient Overlay */
+.overlay-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 20%,
+    rgba(2, 2, 2, 0.7) 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Glass Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-10px) scale(1.01);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background-color 0.2s;
+}
+
+.reveal-mask {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+
+.reveal-text-inner {
+  display: block;
+  transform: translateY(110%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* --- LIQUID METAL / HOLOGRAPHIC TEXT EFFECT (VISIBLE & BALANCED) --- */
+.liquid-metal-bg {
+  background-image: linear-gradient(
+    110deg,
+    #555555 0%,
+    #888888 25%,
+    #cdb4db 38%,
+    #ffffff 48%,
+    #ffffff 52%,
+    #b4dbcd 62%,
+    #888888 75%,
+    #555555 100%
+  );
+  background-size: 250% auto;
+  background-position: calc(100% - var(--mouse-x-pct) * 0.7) 0;
+  will-change: background-position;
+}
+
+.liquid-metal {
+  /* Fix for Safari and other browsers replacing text completely with a white box */
+  display: inline-block;
+  color: transparent !important;
+  background-image: linear-gradient(
+    110deg,
+    #555555 0%,
+    #888888 25%,
+    #cdb4db 38%,
+    #ffffff 48%,
+    #ffffff 52%,
+    #b4dbcd 62%,
+    #888888 75%,
+    #555555 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Background size */
+  background-size: 250% auto;
+
+
+  /* Smooth movement logic */
+  background-position: calc(100% - var(--mouse-x-pct) * 0.7) 0;
+
+  will-change: background-position;
+  cursor: default;
+}
+
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* --- RESPONSIVE FIXES FOR ALL DESKTOP SIZES --- */
+
+/* Ensure html and body take full viewport */
+html {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Ensure content containers are fluid - USE PERCENTAGE WIDTHS */
+.max-w-7xl {
+  max-width: 90% !important;
+  width: 90% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Remove nested container constraints */
+section > div {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Large screens (1440px+) */
+@media (min-width: 1440px) {
+  .max-w-7xl {
+    max-width: 88% !important;
+    width: 88% !important;
+  }
+
+  /* Scale up typography slightly for bigger screens */
+  .text-9xl,
+  .lg\:text-\[11rem\] {
+    font-size: clamp(8rem, 10vw, 12rem) !important;
+  }
+}
+
+/* Extra large screens (1920px+) */
+@media (min-width: 1920px) {
+  .max-w-7xl {
+    max-width: 85% !important;
+    width: 85% !important;
+  }
+
+  /* Scale up text for larger screens */
+  .text-5xl {
+    font-size: 4rem !important;
+  }
+
+  .md\:text-7xl {
+    font-size: 5.5rem !important;
+  }
+}
+
+/* Ultra-wide screens (2560px+) */
+@media (min-width: 2560px) {
+  .max-w-7xl {
+    max-width: 80% !important;
+    width: 80% !important;
+  }
+}
+
+/* Ensure full-width sections span properly */
+section {
+  width: 100%;
+  padding-left: 5vw !important;
+  padding-right: 5vw !important;
+}
+
+/* Fix hero section to always be centered and responsive */
+.hero-text-wrap {
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Marquee should always span full width */
+.animate-marquee {
+  display: inline-block;
+}
+
+/* Main content wrapper */
+main {
+  width: 100%;
+  position: relative;
+}
