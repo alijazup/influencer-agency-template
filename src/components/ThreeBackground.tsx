@@ -31,14 +31,20 @@ export function ThreeBackground() {
         camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, 1, 2000);
         camera.position.z = 1;
 
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        try {
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        while (canvasContainerRef.current.firstChild) {
-            canvasContainerRef.current.removeChild(canvasContainerRef.current.firstChild);
+            while (canvasContainerRef.current.firstChild) {
+                canvasContainerRef.current.removeChild(canvasContainerRef.current.firstChild);
+            }
+            canvasContainerRef.current.appendChild(renderer.domElement);
+        } catch (error) {
+            console.error("WebGL context could not be created. Falling back to CSS background.", error);
+            if (canvasContainerRef.current) canvasContainerRef.current.classList.add('loaded');
+            return; // Skip the rest of Three.js setup
         }
-        canvasContainerRef.current.appendChild(renderer.domElement);
 
         setTimeout(() => { 
             if (canvasContainerRef.current) canvasContainerRef.current.classList.add('loaded'); 
