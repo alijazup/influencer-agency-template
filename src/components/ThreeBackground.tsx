@@ -51,28 +51,28 @@ export function ThreeBackground() {
       varying float vElevation;
 
       void main() {
-        // Deep Oceanic Electric Blue / Azure / Cyan Shader Palette
-        vec3 baseBg      = vec3(0.010, 0.015, 0.030); // Deep oceanic dark
-        vec3 blueColor   = vec3(0.120, 0.420, 0.950); // Deep Cobalt / Electric Blue
-        vec3 azureColor  = vec3(0.150, 0.720, 0.980); // Bright Azure / Cyan Wave
-        vec3 indigoColor = vec3(0.250, 0.150, 0.650); // Deep Indigo Shadow
+        // Pure Luminous Electric Yellow / Golden Sun Shader Palette
+        vec3 baseBg      = vec3(0.040, 0.035, 0.015); // Deep Warm Base
+        vec3 yellowColor = vec3(1.000, 0.920, 0.100); // Luminous Electric Sun Yellow (#ffea1a)
+        vec3 goldColor   = vec3(1.000, 0.780, 0.050); // Vibrant Pure Gold (#ffc70d)
+        vec3 honeyColor  = vec3(0.750, 0.450, 0.050); // Warm Golden Honey Highlight (#bf730d)
 
         float normalizedElevation = vElevation * 0.5 + 0.5;
         
-        // Dynamic mathematical blue chromatic blend
-        vec3 waveColor = mix(indigoColor, blueColor, sin(normalizedElevation * 3.14159 + uTime * 0.5) * 0.5 + 0.5);
-        waveColor = mix(waveColor, azureColor, cos(normalizedElevation * 2.2 - uTime * 0.35) * 0.5 + 0.5);
+        // Dynamic mathematical vivid yellow-gold chromatic blend
+        vec3 waveColor = mix(honeyColor, yellowColor, sin(normalizedElevation * 3.14159 + uTime * 0.5) * 0.5 + 0.5);
+        waveColor = mix(waveColor, goldColor, cos(normalizedElevation * 2.2 - uTime * 0.35) * 0.5 + 0.5);
 
-        // Specular sheen / rim lighting
-        float rim = pow(1.0 - abs(vElevation), 2.4);
-        vec3 finalColor = mix(baseBg, waveColor, normalizedElevation * 0.35 + rim * 0.18);
+        // Specular rim sheen for vivid liquid metallic yellow waves
+        float rim = pow(1.0 - abs(vElevation), 1.6);
+        vec3 finalColor = mix(baseBg, waveColor, normalizedElevation * 0.75 + rim * 0.40);
 
-        // Radial vignette towards edges for crisp contrast focus
+        // Soft radial vignette towards edges
         float distFromCenter = length(vUv - vec2(0.5));
-        float vignette = smoothstep(0.85, 0.12, distFromCenter);
+        float vignette = smoothstep(0.92, 0.20, distFromCenter);
         finalColor *= vignette;
 
-        gl_FragColor = vec4(finalColor, 0.95);
+        gl_FragColor = vec4(finalColor, 1.0);
       }
     `;
 
@@ -170,7 +170,7 @@ export function ThreeBackground() {
     <div
       ref={canvasContainerRef}
       className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
-      style={{ opacity: 0.95 }}
+      style={{ opacity: 1.0 }}
     />
   );
 }
