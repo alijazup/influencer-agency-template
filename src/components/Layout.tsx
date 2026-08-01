@@ -151,13 +151,13 @@ export function Layout() {
       <div className="overlay-gradient"></div>
 
       {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER */}
-      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex justify-between items-start bg-transparent transition-all duration-500 nav-animate">
-          <Link to="/" className="flex items-center cursor-hover">
-            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-32 sm:h-48 md:h-64 lg:h-80 max-h-[350px] w-auto object-contain transition-transform duration-300 hover:scale-105" />
+      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-5 md:px-12 md:py-6 flex justify-between items-center bg-transparent transition-all duration-500 nav-animate">
+          <Link to="/" className="flex items-center gap-3 cursor-hover">
+            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-gray-300 pt-2">
+          <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-gray-300">
               {siteConfig.navLinks.map((link, idx) => (
                 <Link key={idx} to={link.href} className="hover:text-white transition-colors cursor-hover relative group py-1">
                   {link.label}
