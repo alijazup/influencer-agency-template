@@ -3,6 +3,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { siteConfig } from '../config/siteConfig';
 import { ThreeBackground } from './ThreeBackground';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -149,42 +150,40 @@ export function Layout() {
       <ThreeBackground />
       <div className="overlay-gradient"></div>
 
-      <nav className="fixed top-0 w-full z-50 px-4 py-4 md:px-8 md:py-8 flex justify-between items-center mix-blend-difference nav-animate">
+      {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER */}
+      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-5 md:px-12 md:py-6 flex justify-between items-center bg-gradient-to-b from-[#020202]/80 via-[#020202]/30 to-transparent backdrop-blur-sm transition-all duration-500 nav-animate">
           <Link to="/" className="flex items-center gap-3 cursor-hover">
-            <img src="/logo.png" alt="Strong Fluence" className="h-16 sm:h-20 md:h-36 w-auto mix-blend-screen" />
+            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-5 sm:h-6 md:h-7 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-10 text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-gray-300">
-              <Link to="/#about" className="hover:text-white transition-colors cursor-hover">Agency</Link>
-              <Link to="/#services" className="hover:text-white transition-colors cursor-hover">Expertise</Link>
-              <Link to="/signup" className="hover:text-white transition-colors cursor-hover text-white">Partnership</Link>
+          <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-gray-300">
+              {siteConfig.navLinks.map((link, idx) => (
+                <Link key={idx} to={link.href} className="hover:text-white transition-colors cursor-hover relative group py-1">
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              ))}
           </div>
 
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 cursor-hover relative z-[60]"
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 cursor-hover relative z-[60]"
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
           >
-            <span className={`block w-6 h-[1.5px] bg-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${mobileMenuOpen ? 'rotate-45 translate-y-[0px]' : '-translate-y-[4px]'}`}></span>
-            <span className={`block w-6 h-[1.5px] bg-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${mobileMenuOpen ? '-rotate-45 translate-y-[-1.5px]' : 'translate-y-[4px]'}`}></span>
+            <span className={`block w-5 h-[1.5px] bg-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${mobileMenuOpen ? 'rotate-45 translate-y-[0px]' : '-translate-y-[3px]'}`}></span>
+            <span className={`block w-5 h-[1.5px] bg-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${mobileMenuOpen ? '-rotate-45 translate-y-[-1.5px]' : 'translate-y-[3px]'}`}></span>
           </button>
 
           {/* Desktop Contact Button */}
           <Link to="/#contact" className="hidden md:block">
-              <button
-                  className="rounded-full text-[10px] md:text-sm uppercase tracking-widest cursor-hover relative group p-[1px] overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#cdb4db] via-[#ffffff] to-[#b4dbcd] rounded-full"></div>
-                  <div className="w-full h-full bg-[#020202] rounded-full relative z-10 transition-colors group-hover:bg-transparent">
-                      <span className="relative px-6 py-2 md:px-8 md:py-3 flex items-center gap-2 group-hover:text-black transition-colors duration-300">
-                          Contact Us
-                          <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor">
-                              <path d="M1 11L11 1M11 1H3M11 1V9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                      </span>
-                  </div>
+              <button className="rounded-full text-[11px] uppercase tracking-widest cursor-hover px-6 py-2.5 bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 hover:border-white transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-md">
+                  Contact Us
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                      <path d="M1 11L11 1M11 1H3M11 1V9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
               </button>
           </Link>
       </nav>
@@ -207,27 +206,16 @@ export function Layout() {
             >
               Home
             </Link>
-            <Link
-              to="/#about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-3xl font-bold brand-font uppercase tracking-wider text-white hover:text-gray-300 transition-colors"
-            >
-              Agency
-            </Link>
-            <Link
-              to="/#services"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-3xl font-bold brand-font uppercase tracking-wider text-white hover:text-gray-300 transition-colors"
-            >
-              Expertise
-            </Link>
-            <Link
-              to="/signup"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-3xl font-bold brand-font uppercase tracking-wider text-white hover:text-gray-300 transition-colors"
-            >
-              Partnership
-            </Link>
+            {siteConfig.navLinks.map((link, idx) => (
+              <Link
+                key={idx}
+                to={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-3xl font-bold brand-font uppercase tracking-wider text-white hover:text-gray-300 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
               to="/#contact"
               onClick={() => setMobileMenuOpen(false)}
@@ -239,9 +227,18 @@ export function Layout() {
 
           {/* Social links in mobile menu */}
           <div className="flex gap-6 text-xs uppercase tracking-[0.3em] text-gray-500">
-            <a href="https://instagram.com/strongfluence" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
-            <a href="https://tiktok.com/@strongfluence" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">TikTok</a>
-            <a href="https://linkedin.com/company/strongfluence" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            {siteConfig.socialLinks.instagram && (
+              <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+            )}
+            {siteConfig.socialLinks.tiktok && (
+              <a href={siteConfig.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">TikTok</a>
+            )}
+            {siteConfig.socialLinks.linkedin && (
+              <a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            )}
+            {siteConfig.socialLinks.twitter && (
+              <a href={siteConfig.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
+            )}
           </div>
         </div>
       </div>
@@ -251,26 +248,38 @@ export function Layout() {
       </main>
 
       {/* FOOTER */}
-      <section id="contact" className="min-h-[80vh] flex flex-col justify-between py-16 md:py-24 px-4 md:px-8 bg-[#030303] relative z-10 w-full">
-          <div className="max-w-7xl mx-auto w-full">
-              <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500 mb-6 md:mb-10">General Inquiries</p>
-              <div className="overflow-hidden">
-                  <a href="mailto:connect@strongfluence.com"
-                      className="block text-[11vw] sm:text-5xl md:text-8xl font-bold hover:text-gray-400 transition-colors duration-500 brand-font footer-email transform cursor-hover">
-                      connect@<br />strongfluence.com
+      <section id="contact" className="min-h-[50vh] flex flex-col justify-between py-16 md:py-20 px-4 md:px-8 bg-transparent relative z-10 w-full">
+          <div className="max-w-7xl mx-auto w-full glass-card rounded-[2.5rem] md:rounded-full p-8 md:px-14 md:py-10 border border-white/15 flex flex-col md:flex-row justify-between items-center gap-6 backdrop-blur-xl">
+              <div>
+                  <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-400 mb-2">General Inquiries</p>
+                  <a href={`mailto:${siteConfig.contact.email}`}
+                      className="block text-2xl sm:text-4xl md:text-5xl font-bold text-white hover:text-gray-300 transition-colors duration-300 brand-font footer-email cursor-hover">
+                      {siteConfig.contact.email}
                   </a>
               </div>
+              <Link to="/signup" className="rounded-full text-xs uppercase tracking-widest cursor-hover px-8 py-4 bg-white text-black hover:bg-gray-200 font-semibold transition-all whitespace-nowrap">
+                  Get In Touch
+              </Link>
           </div>
 
-          <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-end mt-16 md:mt-20 text-[10px] md:text-xs text-gray-500 font-mono gap-6 md:gap-8">
-              <div className="flex flex-col gap-2 md:gap-3">
-                  <span className="text-white">NOVI PAZAR, SERBIA</span>
-                  <span>&copy; 2026 STRONG FLUENCE. ALL RIGHTS RESERVED.</span>
+          <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-end mt-12 md:mt-16 text-[10px] md:text-xs text-gray-500 font-mono gap-6 md:gap-8 border-t border-white/10 pt-8">
+              <div className="flex flex-col gap-2">
+                  <span className="text-white font-semibold">{siteConfig.contact.location}</span>
+                  <span>&copy; {new Date().getFullYear()} {siteConfig.brand.name.toUpperCase()}. ALL RIGHTS RESERVED.</span>
               </div>
-              <div className="flex flex-wrap gap-6 mt-4 md:mt-0 uppercase tracking-wider">
-                  <a href="https://instagram.com/strongfluence" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-hover">Instagram</a>
-                  <a href="https://tiktok.com/@strongfluence" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-hover">TikTok</a>
-                  <a href="https://linkedin.com/company/strongfluence" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-hover">LinkedIn</a>
+              <div className="flex flex-wrap gap-6 mt-2 md:mt-0 uppercase tracking-wider">
+                  {siteConfig.socialLinks.instagram && (
+                    <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-hover">Instagram</a>
+                  )}
+                  {siteConfig.socialLinks.tiktok && (
+                    <a href={siteConfig.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-hover">TikTok</a>
+                  )}
+                  {siteConfig.socialLinks.linkedin && (
+                    <a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-hover">LinkedIn</a>
+                  )}
+                  {siteConfig.socialLinks.twitter && (
+                    <a href={siteConfig.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-hover">Twitter</a>
+                  )}
               </div>
           </div>
       </section>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link, useLocation } from 'react-router-dom';
-import { BlackHole } from '../components/BlackHole';
+import { siteConfig } from '../config/siteConfig';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,85 +70,72 @@ export default function Home() {
 
   return (
     <>
-        {/* HERO SECTION */}
-        <section className="min-h-screen w-full flex flex-col justify-center items-center relative px-6 py-32 md:py-40">
-            {/* Added BlackHole for mobile view at the bottom of the hero section */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[60%] opacity-100 pointer-events-none z-0 mix-blend-screen scale-110 w-full flex justify-center md:hidden">
-                <BlackHole />
-            </div>
+        {/* HERO SECTION - 2026 Architectural Studio Standard */}
+        <section className="min-h-screen w-full flex flex-col justify-between items-center relative px-6 py-28 md:py-36 z-10 overflow-hidden">
+            
+            {/* Center Stage Bold Statement */}
+            <div className="text-center hero-text-wrap relative w-full max-w-7xl mx-auto flex flex-col items-center my-auto">
+                
+                {/* Eyebrow Label */}
+                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-gray-400 mb-6 hero-anim-desc opacity-0">
+                    CREATIVE DIRECTION & BRAND STRATEGY
+                </p>
 
-            <div className="text-center z-10 hero-text-wrap relative w-full max-w-7xl mx-auto flex flex-col items-center mt-12 md:mt-0">
-                <h1 className="text-[16vw] sm:text-[14vw] md:text-[8rem] lg:text-[11rem] xl:text-[13rem] leading-[0.85] font-bold uppercase tracking-tight brand-font flex flex-col items-center w-full">
-                    <div className="reveal-mask w-full flex justify-center">
-                        <span className="reveal-text-inner hero-anim-title text-white">Strong</span>
+                {/* Hero Title */}
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] xl:text-[8.5rem] leading-[0.92] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
+                    <div className="reveal-mask w-full flex justify-center pb-2">
+                        <span className="reveal-text-inner hero-anim-title text-white">{siteConfig.brand.heroTitleLine1}</span>
                     </div>
 
-                    <div className="reveal-mask w-full flex justify-center mt-[-2%] md:mt-[-1%]">
-                        <span className="liquid-metal reveal-text-inner hero-anim-title w-full cursor-hover"
-                            style={{ paddingBottom: '10px' }}>Fluence</span>
+                    <div className="reveal-mask w-full flex justify-center mt-1 pb-2">
+                        <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover">
+                            {siteConfig.brand.heroTitleLine2}
+                        </span>
                     </div>
                 </h1>
 
-                <div className="mt-8 md:mt-16 overflow-hidden flex flex-col gap-2 w-full justify-center px-4">
-                    <p className="text-[#a0a0a0] max-w-[280px] sm:max-w-md md:max-w-xl mx-auto font-light text-sm sm:text-base md:text-[1.1rem] leading-relaxed tracking-wide hero-anim-desc opacity-0 transform translate-y-10">
-                        Navigating the digital chaos. <br className="hidden md:block" /> Connecting brands with voices that matter.
-                    </p>
-                </div>
+                {/* Description */}
+                <p className="text-[#a0a0a0] max-w-2xl mx-auto font-light text-base sm:text-lg md:text-xl leading-relaxed tracking-wide mt-6 md:mt-8 hero-anim-desc opacity-0 transform translate-y-8">
+                    {siteConfig.brand.tagline} <br className="hidden md:block" /> {siteConfig.brand.description}
+                </p>
                 
-                <div className="mt-12 md:mt-24 flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 hero-anim-desc opacity-0 transform translate-y-10 w-full px-4 md:px-0">
-                    <Link to="/#services" className="rounded-full text-[10px] md:text-sm uppercase tracking-widest cursor-hover relative group p-[1px] overflow-hidden inline-flex w-full md:w-auto md:min-w-[220px]">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#cdb4db] via-[#ffffff] to-[#b4dbcd] rounded-full"></div>
-                        <div className="w-full h-full bg-[#020202] rounded-full relative z-10 transition-colors group-hover:bg-transparent">
-                            <span className="relative px-6 py-4 md:px-8 md:py-4 w-full flex justify-center items-center gap-3 group-hover:text-black transition-colors duration-300 whitespace-nowrap">
-                                Our Expertise
-                                <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 12 12" fill="none" stroke="currentColor">
-                                    <path d="M1 11L11 1M11 1H3M11 1V9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                            </span>
-                        </div>
+                {/* Hero Action Buttons */}
+                <div className="mt-10 md:mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 hero-anim-desc opacity-0 transform translate-y-8 w-full px-4 md:px-0">
+                    <Link to="/signup" className="bg-white text-black hover:bg-gray-100 rounded-full px-8 py-4 text-xs md:text-sm uppercase tracking-widest font-bold shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 cursor-hover inline-flex items-center justify-center gap-2 w-full sm:w-auto min-w-[210px]">
+                        Partner With Us ↗
                     </Link>
                     
-                    <Link to="/signup" className="rounded-full text-[10px] md:text-sm uppercase tracking-widest cursor-hover relative group p-[1px] overflow-hidden inline-flex w-full md:w-auto md:min-w-[220px]">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#cdb4db] via-[#ffffff] to-[#b4dbcd] rounded-full"></div>
-                        <div className="w-full h-full bg-[#020202] rounded-full relative z-10 transition-colors group-hover:bg-transparent">
-                            <span className="relative px-6 py-4 md:px-8 md:py-4 w-full flex justify-center items-center gap-3 group-hover:text-black transition-colors duration-300 whitespace-nowrap">
-                                Partner With Us
-                                <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 12 12" fill="none" stroke="currentColor">
-                                    <path d="M1 11L11 1M11 1H3M11 1V9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                            </span>
-                        </div>
+                    <Link to="/#services" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white rounded-full px-8 py-4 text-xs md:text-sm uppercase tracking-widest font-medium backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-hover inline-flex items-center justify-center gap-2 w-full sm:w-auto min-w-[210px]">
+                        Our Expertise ↗
                     </Link>
                 </div>
+            </div>
+
+            {/* Bottom Scroll Indicator */}
+            <div className="w-full max-w-7xl mx-auto flex justify-between items-center text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-gray-500 hero-anim-desc opacity-0 pt-6">
+                <span>SCROLL TO EXPLORE</span>
+                <div className="w-12 h-[1px] bg-white/20"></div>
+                <span>2026 EDITION</span>
             </div>
         </section>
 
         {/* ABOUT SECTION */}
         <section id="about" className="min-h-[90vh] flex items-center justify-center py-16 md:py-24 px-4 md:px-6 relative z-10">
-            <div className="hidden md:block absolute right-0 top-0 translate-x-[20%] -translate-y-[10%] opacity-20 pointer-events-none z-0 mix-blend-screen scale-75">
-                <BlackHole />
-            </div>
             <div className="max-w-7xl w-full relative z-10">
                 <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start md:items-end">
                     <div>
                         <span className="block w-12 md:w-16 h-[1px] bg-white/50 mb-6 md:mb-8 scroll-line"></span>
                         <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-none brand-font">
-                            <span className="block overflow-hidden"><span className="block split-line">We don't
-                                    just</span></span>
-                            <span className="block overflow-hidden"><span className="block split-line">follow
-                                    trends.</span></span>
+                            <span className="block overflow-hidden"><span className="block split-line">Crafting</span></span>
+                            <span className="block overflow-hidden"><span className="block split-line">digital</span></span>
                             <span className="block overflow-hidden pt-2">
-                                <span className="split-line italic liquid-metal cursor-hover px-2 -ml-2">We build the
-                                    bridges.</span>
+                                <span className="split-line italic liquid-metal cursor-hover px-2 -ml-2">impact.</span>
                             </span>
                         </h2>
                     </div>
                     <div className="text-gray-300 text-base md:text-xl font-light leading-relaxed">
                         <p className="fade-up-text opacity-0 translate-y-8">
-                            In an era of content overload, average is invisible.
-                            <strong>Strong Fluence</strong> is more than an agency—we are architects of influence.
-                            We blend data-driven insights, consumer psychology, and raw creativity to turn passive followers
-                            into a loyal community.
+                            <strong>{siteConfig.brand.name}</strong> is {siteConfig.brand.aboutHeading} {siteConfig.brand.aboutDescription}
                         </p>
                     </div>
                 </div>
@@ -160,55 +147,59 @@ export default function Home() {
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-end mb-12 md:mb-20 border-b border-white/10 pb-6 md:pb-8 fade-in-trigger">
                     <h2 className="text-4xl md:text-6xl brand-font">Our Expertise</h2>
-                    <span className="hidden sm:inline-block text-sm text-gray-500 tracking-widest">2026 VISION</span>
+                    <span className="hidden sm:inline-block text-sm text-gray-500 tracking-widest">{new Date().getFullYear()} VISION</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[650px]">
-                    <Link to="/expertise/talent-management"
-                        className="glass-card service-card md:col-span-2 md:row-span-2 rounded-[2rem] p-8 md:p-12 flex flex-col justify-between group relative overflow-hidden cursor-hover">
-                        <div
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-40 bg-blue-900/10 blur-[120px] rounded-full group-hover:bg-blue-800/20 transition-colors duration-500">
-                        </div>
-                        <div className="relative z-10">
-                            <h3 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Talent Management</h3>
-                            <p className="text-gray-400 max-w-md text-base md:text-lg">Bespoke strategy and representation for the next generation of culture-shifting
-                                creators. From contract negotiation to 360° creative direction.</p>
-                        </div>
-                        <div className="relative z-10 flex flex-wrap gap-2 md:gap-3 mt-8 md:mt-10">
-                            <span
-                                className="px-3 py-1.5 md:px-4 md:py-2 border border-white/10 rounded-full text-[10px] md:text-xs uppercase tracking-wider text-gray-300">Strategy</span>
-                            <span
-                                className="px-3 py-1.5 md:px-4 md:py-2 border border-white/10 rounded-full text-[10px] md:text-xs uppercase tracking-wider text-gray-300">Growth</span>
-                        </div>
-                        <div
-                            className="absolute bottom-8 right-8 md:bottom-10 md:right-10 p-3 md:p-4 border border-white/10 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
-                            <svg className="w-5 h-5 md:w-6 md:h-6 transform group-hover:rotate-45 transition-transform duration-300"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </div>
-                    </Link>
+                    {siteConfig.expertise[0] && (
+                        <Link to={`/expertise/${siteConfig.expertise[0].slug}`}
+                            className="glass-card service-card md:col-span-2 md:row-span-2 rounded-[2rem] p-8 md:p-12 flex flex-col justify-between group relative overflow-hidden cursor-hover">
+                            <div
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-40 bg-blue-900/10 blur-[120px] rounded-full group-hover:bg-blue-800/20 transition-colors duration-500">
+                            </div>
+                            <div className="relative z-10">
+                                <h3 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">{siteConfig.expertise[0].title}</h3>
+                                <p className="text-gray-400 max-w-md text-base md:text-lg">{siteConfig.expertise[0].description}</p>
+                            </div>
+                            <div className="relative z-10 flex flex-wrap gap-2 md:gap-3 mt-8 md:mt-10">
+                                {siteConfig.expertise[0].features.slice(0, 2).map((feat, idx) => (
+                                    <span key={idx} className="px-3 py-1.5 md:px-4 md:py-2 border border-white/10 rounded-full text-[10px] md:text-xs uppercase tracking-wider text-gray-300">
+                                        {feat}
+                                    </span>
+                                ))}
+                            </div>
+                            <div
+                                className="absolute bottom-8 right-8 md:bottom-10 md:right-10 p-3 md:p-4 border border-white/10 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
+                                <svg className="w-5 h-5 md:w-6 md:h-6 transform group-hover:rotate-45 transition-transform duration-300"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </div>
+                        </Link>
+                    )}
 
-                    <Link to="/expertise/brand-campaigns"
-                        className="glass-card service-card rounded-[2rem] p-8 md:p-10 flex flex-col justify-center group relative overflow-hidden cursor-hover delay-100">
-                        <div
-                            className="absolute top-0 right-0 p-40 bg-purple-900/10 blur-[100px] rounded-full group-hover:bg-purple-800/20 transition-colors duration-500">
-                        </div>
-                        <h3 className="text-2xl font-bold mb-3 md:mb-4 relative z-10">Brand Campaigns</h3>
-                        <p className="text-xs md:text-sm text-gray-400 relative z-10 leading-relaxed">Narrative-driven campaigns that
-                            capture attention, going beyond vanity metrics to build true brand affinity.</p>
-                    </Link>
+                    {siteConfig.expertise[1] && (
+                        <Link to={`/expertise/${siteConfig.expertise[1].slug}`}
+                            className="glass-card service-card rounded-[2rem] p-8 md:p-10 flex flex-col justify-center group relative overflow-hidden cursor-hover delay-100">
+                            <div
+                                className="absolute top-0 right-0 p-40 bg-purple-900/10 blur-[100px] rounded-full group-hover:bg-purple-800/20 transition-colors duration-500">
+                            </div>
+                            <h3 className="text-2xl font-bold mb-3 md:mb-4 relative z-10">{siteConfig.expertise[1].title}</h3>
+                            <p className="text-xs md:text-sm text-gray-400 relative z-10 leading-relaxed">{siteConfig.expertise[1].description}</p>
+                        </Link>
+                    )}
 
-                    <Link to="/expertise/campaign-strategy"
-                        className="glass-card service-card rounded-[2rem] p-8 md:p-10 flex flex-col justify-center group relative overflow-hidden cursor-hover delay-200">
-                        <div
-                            className="absolute bottom-0 left-0 p-40 bg-indigo-900/10 blur-[100px] rounded-full group-hover:bg-indigo-800/20 transition-colors duration-500">
-                        </div>
-                        <h3 className="text-2xl font-bold mb-3 md:mb-4 relative z-10">Campaign Strategy</h3>
-                        <p className="text-xs md:text-sm text-gray-400 relative z-10 leading-relaxed">Strategic orchestration and narrative
-                            direction that aligns your brand with the voices that truly matter.</p>
-                    </Link>
+                    {siteConfig.expertise[2] && (
+                        <Link to={`/expertise/${siteConfig.expertise[2].slug}`}
+                            className="glass-card service-card rounded-[2rem] p-8 md:p-10 flex flex-col justify-center group relative overflow-hidden cursor-hover delay-200">
+                            <div
+                                className="absolute bottom-0 left-0 p-40 bg-indigo-900/10 blur-[100px] rounded-full group-hover:bg-indigo-800/20 transition-colors duration-500">
+                            </div>
+                            <h3 className="text-2xl font-bold mb-3 md:mb-4 relative z-10">{siteConfig.expertise[2].title}</h3>
+                            <p className="text-xs md:text-sm text-gray-400 relative z-10 leading-relaxed">{siteConfig.expertise[2].description}</p>
+                        </Link>
+                    )}
                 </div>
             </div>
         </section>
