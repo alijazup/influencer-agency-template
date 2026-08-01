@@ -70,51 +70,51 @@ export default function Home() {
 
   return (
     <>
-        {/* HERO SECTION - 2026 Architectural Studio Standard (Spacious Classic Height) */}
-        <section className="min-h-[105vh] w-full flex flex-col justify-between items-center relative px-6 pt-36 pb-20 md:pt-48 md:pb-28 z-10 overflow-hidden">
+        {/* HERO SECTION - 2026 Architectural Studio Standard (Optimized Mobile Proportions) */}
+        <section className="min-h-[85vh] sm:min-h-screen md:min-h-[105vh] w-full flex flex-col justify-between items-center relative px-4 sm:px-6 pt-28 pb-10 sm:pt-36 md:pt-48 md:pb-28 z-10 overflow-hidden">
             
             {/* Center Stage Bold Statement */}
             <div className="text-center hero-text-wrap relative w-full max-w-7xl mx-auto flex flex-col items-center my-auto">
                 
                 {/* Eyebrow Label */}
-                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-gray-400 mb-6 md:mb-8 hero-anim-desc opacity-0">
+                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] sm:tracking-[0.3em] text-gray-400 mb-4 sm:mb-6 md:mb-8 hero-anim-desc opacity-0">
                     {siteConfig.brand.name} • TALENT & INFLUENCE MANAGEMENT
                 </p>
 
-                {/* Hero Title - Clean 2-Line Fluid Scale (Zero Edge Clipping) */}
-                <h1 className="text-[7.5vw] sm:text-[6vw] md:text-[5.2vw] lg:text-[4.8vw] xl:text-[5.4rem] leading-[0.94] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full px-2">
-                    <div className="reveal-mask w-full flex justify-center py-2 px-6">
-                        <span className="reveal-text-inner hero-anim-title text-white whitespace-nowrap px-3 py-1">{siteConfig.brand.heroTitleLine1}</span>
+                {/* Hero Title - Clean 2-Line Fluid Scale */}
+                <h1 className="text-3xl sm:text-[6vw] md:text-[5.2vw] lg:text-[4.8vw] xl:text-[5.4rem] leading-[0.96] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full px-1">
+                    <div className="reveal-mask w-full flex justify-center py-1 sm:py-2 px-2 sm:px-6">
+                        <span className="reveal-text-inner hero-anim-title text-white whitespace-nowrap px-1 sm:px-3 py-1">{siteConfig.brand.heroTitleLine1}</span>
                     </div>
 
-                    <div className="reveal-mask w-full flex justify-center mt-1 py-2 px-6">
-                        <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover whitespace-nowrap px-3 py-1">
+                    <div className="reveal-mask w-full flex justify-center mt-1 py-1 sm:py-2 px-2 sm:px-6">
+                        <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover whitespace-nowrap px-1 sm:px-3 py-1">
                             {siteConfig.brand.heroTitleLine2}
                         </span>
                     </div>
                 </h1>
 
                 {/* Subtitle - Punchy & Clean */}
-                <p className="text-[#a0a0a0] max-w-lg mx-auto font-light text-sm sm:text-base md:text-lg leading-relaxed tracking-wide mt-8 md:mt-10 hero-anim-desc opacity-0 transform translate-y-8">
+                <p className="text-[#a0a0a0] max-w-lg mx-auto font-light text-xs sm:text-base md:text-lg leading-relaxed tracking-wide mt-6 md:mt-10 hero-anim-desc opacity-0 transform translate-y-8 px-2">
                     {siteConfig.brand.tagline}
                 </p>
                 
                 {/* Hero Action Buttons */}
-                <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 hero-anim-desc opacity-0 transform translate-y-8 w-full px-4 md:px-0">
-                    <Link to="/signup" className="bg-white text-black hover:bg-gray-100 rounded-full px-8 py-4 text-xs md:text-sm uppercase tracking-widest font-bold shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 cursor-hover inline-flex items-center justify-center gap-2 w-full sm:w-auto min-w-[210px]">
+                <div className="mt-8 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 hero-anim-desc opacity-0 transform translate-y-8 w-full px-4 md:px-0">
+                    <Link to="/signup" className="bg-white text-black hover:bg-gray-100 rounded-full px-8 py-3.5 sm:py-4 text-xs md:text-sm uppercase tracking-widest font-bold shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 cursor-hover inline-flex items-center justify-center gap-2 w-full sm:w-auto min-w-[200px]">
                         Partner With Us ↗
                     </Link>
                     
-                    <Link to="/#services" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white rounded-full px-8 py-4 text-xs md:text-sm uppercase tracking-widest font-medium backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-hover inline-flex items-center justify-center gap-2 w-full sm:w-auto min-w-[210px]">
+                    <Link to="/#services" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white rounded-full px-8 py-3.5 sm:py-4 text-xs md:text-sm uppercase tracking-widest font-medium backdrop-blur-md transition-all duration-300 hover:scale-105 cursor-hover inline-flex items-center justify-center gap-2 w-full sm:w-auto min-w-[200px]">
                         Our Expertise ↗
                     </Link>
                 </div>
             </div>
 
             {/* Bottom Scroll Indicator */}
-            <div className="w-full max-w-7xl mx-auto flex justify-between items-center text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-gray-500 hero-anim-desc opacity-0 pt-10 md:pt-16">
+            <div className="w-full max-w-7xl mx-auto flex justify-between items-center text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gray-500 hero-anim-desc opacity-0 pt-6 md:pt-16">
                 <span>SCROLL TO EXPLORE</span>
-                <div className="w-12 h-[1px] bg-white/20"></div>
+                <div className="w-8 sm:w-12 h-[1px] bg-white/20"></div>
                 <span>2026 EDITION</span>
             </div>
         </section>

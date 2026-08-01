@@ -245,16 +245,16 @@ export function Layout() {
       </main>
 
       {/* FOOTER */}
-      <section id="contact" className="min-h-[50vh] flex flex-col justify-between py-16 md:py-20 px-4 md:px-8 bg-transparent relative z-10 w-full">
-          <div className="max-w-7xl mx-auto w-full glass-card rounded-[2.5rem] md:rounded-full p-8 md:px-14 md:py-10 border border-white/15 flex flex-col md:flex-row justify-between items-center gap-6 backdrop-blur-xl">
-              <div>
+      <section id="contact" className="min-h-[50vh] flex flex-col justify-between py-12 md:py-20 px-4 md:px-8 bg-transparent relative z-10 w-full">
+          <div className="max-w-7xl mx-auto w-full glass-card rounded-[2rem] md:rounded-full p-6 sm:p-8 md:px-14 md:py-10 border border-white/15 flex flex-col md:flex-row justify-between items-center gap-6 backdrop-blur-xl">
+              <div className="w-full text-center md:text-left">
                   <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-400 mb-2">General Inquiries</p>
                   <a href={`mailto:${siteConfig.contact.email}`}
-                      className="block text-2xl sm:text-4xl md:text-5xl font-bold text-white hover:text-gray-300 transition-colors duration-300 brand-font footer-email cursor-hover">
+                      className="block text-lg sm:text-3xl md:text-5xl font-bold text-white hover:text-gray-300 transition-colors duration-300 brand-font footer-email cursor-hover break-all sm:break-normal">
                       {siteConfig.contact.email}
                   </a>
               </div>
-              <Link to="/signup" className="rounded-full text-xs uppercase tracking-widest cursor-hover px-8 py-4 bg-white text-black hover:bg-gray-200 font-semibold transition-all whitespace-nowrap">
+              <Link to="/signup" className="rounded-full text-xs uppercase tracking-widest cursor-hover px-8 py-4 bg-white text-black hover:bg-gray-200 font-semibold transition-all whitespace-nowrap w-full md:w-auto text-center">
                   Get In Touch
               </Link>
           </div>
