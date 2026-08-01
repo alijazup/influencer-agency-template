@@ -70,8 +70,8 @@ export default function Home() {
 
   return (
     <>
-        {/* HERO SECTION - 2026 Architectural Studio Standard (Optimized Mobile Proportions) */}
-        <section className="min-h-[85vh] sm:min-h-screen md:min-h-[105vh] w-full flex flex-col justify-between items-center relative px-4 sm:px-6 pt-28 pb-10 sm:pt-36 md:pt-48 md:pb-28 z-10 overflow-hidden">
+        {/* HERO SECTION - 2026 Architectural Studio Standard (Spacious Full Mobile Height) */}
+        <section className="min-h-[100vh] sm:min-h-screen md:min-h-[105vh] w-full flex flex-col justify-between items-center relative px-4 sm:px-6 pt-32 pb-16 sm:pt-36 md:pt-48 md:pb-28 z-10 overflow-hidden">
             
             {/* Center Stage Bold Statement */}
             <div className="text-center hero-text-wrap relative w-full max-w-7xl mx-auto flex flex-col items-center my-auto">
