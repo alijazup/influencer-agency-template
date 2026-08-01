@@ -1,16 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 70" width="120" height="70">
-  <defs>
-    <linearGradient id="tqBigLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="60%" stop-color="#f1f5f9" />
-      <stop offset="100%" stop-color="#cbd5e1" />
-    </linearGradient>
-  </defs>
-  <!-- Bold Sharp Monogram TQ Mark -->
-  <g transform="translate(6, 6)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" width="100" height="60">
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
     <!-- T Letter -->
-    <path d="M 4 6 H 42 V 15 H 28 V 54 H 18 V 15 H 4 Z" fill="url(#tqBigLogoGrad)" />
+    <path d="M 10 12 H 42" />
+    <path d="M 26 12 V 48" />
     <!-- Q Letter -->
-    <path d="M 40 30 C 40 16 52 6 68 6 C 84 6 96 16 96 30 C 96 41 87 50 74 53 L 86 62 H 72 L 63 54 C 59.5 55 55.5 55 51 55 C 40 55 40 44 40 30 Z M 51 30 C 51 38 58 44 68 44 C 78 44 85 38 85 30 C 85 22 78 16 68 16 C 58 16 51 22 51 30 Z" fill="url(#tqBigLogoGrad)" />
+    <circle cx="68" cy="30" r="18" />
+    <path d="M 78 40 L 90 52" />
   </g>
 </svg>
