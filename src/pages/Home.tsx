@@ -70,18 +70,13 @@ export default function Home() {
 
   return (
     <>
-        {/* HERO SECTION - 2026 Architectural Studio Standard (Spacious Full Mobile Height) */}
-        <section className="min-h-[100vh] sm:min-h-screen md:min-h-[105vh] w-full flex flex-col justify-between items-center relative px-4 sm:px-6 pt-32 pb-16 sm:pt-36 md:pt-48 md:pb-28 z-10 overflow-hidden">
+        {/* HERO SECTION - 2026 Architectural Studio Standard */}
+        <section className="min-h-[88vh] sm:min-h-screen md:min-h-[105vh] w-full flex flex-col justify-between items-center relative px-4 sm:px-6 pt-24 pb-8 sm:pt-36 md:pt-48 md:pb-28 z-10 overflow-hidden">
             
             {/* Center Stage Bold Statement */}
             <div className="text-center hero-text-wrap relative w-full max-w-7xl mx-auto flex flex-col items-center my-auto">
-                
-                {/* Eyebrow Label */}
-                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] sm:tracking-[0.3em] text-gray-400 mb-4 sm:mb-6 md:mb-8 hero-anim-desc opacity-0">
-                    {siteConfig.brand.name} • TALENT & INFLUENCE MANAGEMENT
-                </p>
 
-                {/* Hero Title - Clean 2-Line Fluid Scale (Zero Mobile Clipping) */}
+                {/* Hero Title - Clean 2-Line Fluid Scale */}
                 <h1 className="text-[5.8vw] xs:text-[6vw] sm:text-[6vw] md:text-[5.2vw] lg:text-[4.8vw] xl:text-[5.4rem] leading-[0.96] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
                     <div className="reveal-mask w-full flex justify-center py-1 sm:py-2 px-0 sm:px-6">
                         <span className="reveal-text-inner hero-anim-title text-white whitespace-nowrap px-1 sm:px-3 py-1">{siteConfig.brand.heroTitleLine1}</span>
