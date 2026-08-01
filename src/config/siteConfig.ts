@@ -40,7 +40,7 @@ export const siteConfig: SiteConfig = {
     description: "",
     aboutHeading: "Where strategic brand partnerships meet influential voices.",
     aboutDescription: "TQ Media is a premier influencer and talent management agency. We orchestrate authentic brand collaborations and execute high-converting media campaigns across global platforms.",
-    logoUrl: "/logo.png"
+    logoUrl: "/logo.svg"
   },
   contact: {
     email: "partnerships@tqmedia.co.uk",

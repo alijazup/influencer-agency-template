@@ -151,9 +151,9 @@ export function Layout() {
       <div className="overlay-gradient"></div>
 
       {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER */}
-      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-4 md:px-12 md:py-5 flex justify-between items-center bg-gradient-to-b from-[#020202]/90 via-[#020202]/40 to-transparent backdrop-blur-md transition-all duration-500 nav-animate">
+      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-5 md:px-12 md:py-6 flex justify-between items-center bg-gradient-to-b from-[#020202]/80 via-[#020202]/30 to-transparent backdrop-blur-sm transition-all duration-500 nav-animate">
           <Link to="/" className="flex items-center cursor-hover">
-            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto max-w-[280px] sm:max-w-[340px] md:max-w-[420px] object-contain object-left transition-transform duration-300 hover:scale-105" />
+            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-7 sm:h-8 md:h-10 w-auto object-contain transition-transform duration-300 hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}
