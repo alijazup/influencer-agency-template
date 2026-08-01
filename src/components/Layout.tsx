@@ -151,13 +151,13 @@ export function Layout() {
       <div className="overlay-gradient"></div>
 
       {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER */}
-      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-4 md:px-12 md:py-5 flex justify-between items-center bg-transparent transition-all duration-500 nav-animate">
-          <Link to="/" className="flex items-center gap-3 cursor-hover">
-            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-8 sm:px-12 md:px-16 py-6 md:py-7 flex justify-between items-center bg-transparent transition-all duration-500 nav-animate">
+          <Link to="/" className="flex items-center cursor-hover">
+            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-gray-300">
+          <div className="hidden md:flex items-center gap-12 text-[11px] uppercase tracking-[0.25em] font-medium text-gray-300">
               {siteConfig.navLinks.map((link, idx) => (
                 <Link key={idx} to={link.href} className="hover:text-white transition-colors cursor-hover relative group py-1">
                   {link.label}
@@ -179,11 +179,8 @@ export function Layout() {
 
           {/* Desktop Contact Button */}
           <Link to="/#contact" className="hidden md:block">
-              <button className="rounded-full text-[11px] uppercase tracking-widest cursor-hover px-6 py-2.5 bg-white/10 hover:bg-white text-white hover:text-black border border-white/20 hover:border-white transition-all duration-300 flex items-center gap-2 font-medium backdrop-blur-md">
-                  Contact Us
-                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor">
-                      <path d="M1 11L11 1M11 1H3M11 1V9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+              <button className="rounded-full text-[11px] uppercase tracking-[0.2em] font-medium cursor-hover px-7 py-2.5 bg-transparent hover:bg-white text-white hover:text-black border border-white/30 hover:border-white transition-all duration-300 flex items-center gap-2">
+                  CONTACT US ↗
               </button>
           </Link>
       </nav>
