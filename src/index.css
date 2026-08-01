@@ -54,8 +54,8 @@ h3,
   height: 100%;
   background: radial-gradient(
     circle at center,
-    transparent 20%,
-    rgba(2, 2, 2, 0.7) 100%
+    transparent 40%,
+    rgba(2, 2, 2, 0.25) 100%
   );
   z-index: -1;
   pointer-events: none;

@@ -51,28 +51,28 @@ export function ThreeBackground() {
       varying float vElevation;
 
       void main() {
-        // Pure Luminous Electric Yellow / Golden Sun Shader Palette
-        vec3 baseBg      = vec3(0.040, 0.035, 0.015); // Deep Warm Base
-        vec3 yellowColor = vec3(1.000, 0.920, 0.100); // Luminous Electric Sun Yellow (#ffea1a)
-        vec3 goldColor   = vec3(1.000, 0.780, 0.050); // Vibrant Pure Gold (#ffc70d)
-        vec3 honeyColor  = vec3(0.750, 0.450, 0.050); // Warm Golden Honey Highlight (#bf730d)
+        // Ultra-Luxury Champagne Gold & Metallic Amber Shader Palette
+        vec3 baseBg        = vec3(0.015, 0.012, 0.008); // Deep Obsidian Charcoal
+        vec3 goldHighlight = vec3(0.960, 0.820, 0.280); // Champagne Gold Sheen (#f5d147)
+        vec3 amberWarmth   = vec3(0.850, 0.580, 0.120); // Warm Metallic Amber (#d9941f)
+        vec3 bronzeShadow  = vec3(0.320, 0.180, 0.040); // Deep Metallic Bronze Shadow
 
         float normalizedElevation = vElevation * 0.5 + 0.5;
         
-        // Dynamic mathematical vivid yellow-gold chromatic blend
-        vec3 waveColor = mix(honeyColor, yellowColor, sin(normalizedElevation * 3.14159 + uTime * 0.5) * 0.5 + 0.5);
-        waveColor = mix(waveColor, goldColor, cos(normalizedElevation * 2.2 - uTime * 0.35) * 0.5 + 0.5);
+        // Multi-phase mathematical champagne gold blend
+        vec3 waveColor = mix(bronzeShadow, goldHighlight, sin(normalizedElevation * 3.14159 + uTime * 0.5) * 0.5 + 0.5);
+        waveColor = mix(waveColor, amberWarmth, cos(normalizedElevation * 2.2 - uTime * 0.35) * 0.5 + 0.5);
 
-        // Specular rim sheen for vivid liquid metallic yellow waves
-        float rim = pow(1.0 - abs(vElevation), 1.6);
-        vec3 finalColor = mix(baseBg, waveColor, normalizedElevation * 0.75 + rim * 0.40);
+        // Specular rim light for silk liquid gold metallic waves
+        float rim = pow(1.0 - abs(vElevation), 2.2);
+        vec3 finalColor = mix(baseBg, waveColor, normalizedElevation * 0.42 + rim * 0.22);
 
-        // Soft radial vignette towards edges
+        // Radial vignette for crisp focus and perfect text readability
         float distFromCenter = length(vUv - vec2(0.5));
-        float vignette = smoothstep(0.92, 0.20, distFromCenter);
+        float vignette = smoothstep(0.88, 0.14, distFromCenter);
         finalColor *= vignette;
 
-        gl_FragColor = vec4(finalColor, 1.0);
+        gl_FragColor = vec4(finalColor, 0.95);
       }
     `;
 
@@ -170,7 +170,7 @@ export function ThreeBackground() {
     <div
       ref={canvasContainerRef}
       className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
-      style={{ opacity: 1.0 }}
+      style={{ opacity: 0.95 }}
     />
   );
 }
