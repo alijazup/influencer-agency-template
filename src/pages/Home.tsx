@@ -81,13 +81,13 @@ export default function Home() {
                     {siteConfig.brand.name} • TALENT & INFLUENCE MANAGEMENT
                 </p>
 
-                {/* Hero Title - Clean 2-Line Fluid Scale */}
-                <h1 className="text-3xl sm:text-[6vw] md:text-[5.2vw] lg:text-[4.8vw] xl:text-[5.4rem] leading-[0.96] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full px-1">
-                    <div className="reveal-mask w-full flex justify-center py-1 sm:py-2 px-2 sm:px-6">
+                {/* Hero Title - Clean 2-Line Fluid Scale (Zero Mobile Clipping) */}
+                <h1 className="text-[5.8vw] xs:text-[6vw] sm:text-[6vw] md:text-[5.2vw] lg:text-[4.8vw] xl:text-[5.4rem] leading-[0.96] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
+                    <div className="reveal-mask w-full flex justify-center py-1 sm:py-2 px-0 sm:px-6">
                         <span className="reveal-text-inner hero-anim-title text-white whitespace-nowrap px-1 sm:px-3 py-1">{siteConfig.brand.heroTitleLine1}</span>
                     </div>
 
-                    <div className="reveal-mask w-full flex justify-center mt-1 py-1 sm:py-2 px-2 sm:px-6">
+                    <div className="reveal-mask w-full flex justify-center mt-1 py-1 sm:py-2 px-0 sm:px-6">
                         <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover whitespace-nowrap px-1 sm:px-3 py-1">
                             {siteConfig.brand.heroTitleLine2}
                         </span>

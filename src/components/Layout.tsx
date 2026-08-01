@@ -151,7 +151,7 @@ export function Layout() {
       <div className="overlay-gradient"></div>
 
       {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER */}
-      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-8 sm:px-12 md:px-16 pt-10 md:pt-14 pb-6 md:pb-8 flex justify-between items-center bg-transparent transition-all duration-500 nav-animate">
+      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-4 sm:px-12 md:px-16 pt-5 sm:pt-8 md:pt-14 pb-4 sm:pb-6 md:pb-8 flex justify-between items-center bg-transparent transition-all duration-500 nav-animate">
           <Link to="/" className="flex items-center cursor-hover">
             <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 hover:scale-105" />
           </Link>
