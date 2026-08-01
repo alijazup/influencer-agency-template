@@ -150,10 +150,10 @@ export function Layout() {
       <ThreeBackground />
       <div className="overlay-gradient"></div>
 
-      {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER */}
-      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-5 md:px-12 md:py-6 flex justify-between items-center bg-gradient-to-b from-[#020202]/80 via-[#020202]/30 to-transparent backdrop-blur-sm transition-all duration-500 nav-animate">
+      {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER (100% Transparent, 3x Logo) */}
+      <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-4 md:px-12 md:py-6 flex justify-between items-center bg-transparent transition-all duration-500 nav-animate">
           <Link to="/" className="flex items-center gap-3 cursor-hover">
-            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-14 sm:h-20 md:h-24 max-h-24 w-auto object-contain transition-transform duration-300 hover:scale-105" />
+            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-24 sm:h-32 md:h-40 max-h-44 w-auto object-contain transition-transform duration-300 hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}
