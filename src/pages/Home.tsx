@@ -81,14 +81,14 @@ export default function Home() {
                     {siteConfig.brand.name} • TALENT & INFLUENCE MANAGEMENT
                 </p>
 
-                {/* Hero Title - Clean 2-Line Architecture */}
-                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] xl:text-[6rem] leading-[0.92] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
-                    <div className="reveal-mask w-full flex justify-center pb-2">
-                        <span className="reveal-text-inner hero-anim-title text-white whitespace-nowrap">{siteConfig.brand.heroTitleLine1}</span>
+                {/* Hero Title - Clean 2-Line Fluid Scale (Zero Edge Clipping) */}
+                <h1 className="text-[7.5vw] sm:text-[6vw] md:text-[5.2vw] lg:text-[4.8vw] xl:text-[5.4rem] leading-[0.94] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full px-2">
+                    <div className="reveal-mask w-full flex justify-center py-2 px-6">
+                        <span className="reveal-text-inner hero-anim-title text-white whitespace-nowrap px-3 py-1">{siteConfig.brand.heroTitleLine1}</span>
                     </div>
 
-                    <div className="reveal-mask w-full flex justify-center mt-1 pb-2">
-                        <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover whitespace-nowrap">
+                    <div className="reveal-mask w-full flex justify-center mt-1 py-2 px-6">
+                        <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover whitespace-nowrap px-3 py-1">
                             {siteConfig.brand.heroTitleLine2}
                         </span>
                     </div>

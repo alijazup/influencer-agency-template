@@ -109,8 +109,12 @@ h3,
 .reveal-mask {
   overflow: hidden;
   display: block;
-  padding-bottom: 0.2em;
-  margin-bottom: -0.2em;
+  padding-bottom: 0.25em;
+  margin-bottom: -0.25em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  margin-left: -0.2em;
+  margin-right: -0.2em;
 }
 
 .reveal-text-inner {
