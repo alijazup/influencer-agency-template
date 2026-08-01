@@ -70,14 +70,14 @@ export default function Home() {
 
   return (
     <>
-        {/* HERO SECTION - 2026 Architectural Studio Standard */}
-        <section className="min-h-screen w-full flex flex-col justify-between items-center relative px-6 py-28 md:py-36 z-10 overflow-hidden">
+        {/* HERO SECTION - 2026 Architectural Studio Standard (Spacious Classic Height) */}
+        <section className="min-h-[105vh] w-full flex flex-col justify-between items-center relative px-6 pt-36 pb-20 md:pt-48 md:pb-28 z-10 overflow-hidden">
             
             {/* Center Stage Bold Statement */}
             <div className="text-center hero-text-wrap relative w-full max-w-7xl mx-auto flex flex-col items-center my-auto">
                 
                 {/* Eyebrow Label */}
-                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-gray-400 mb-4 md:mb-6 hero-anim-desc opacity-0">
+                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-gray-400 mb-6 md:mb-8 hero-anim-desc opacity-0">
                     {siteConfig.brand.name} • TALENT & INFLUENCE MANAGEMENT
                 </p>
 
@@ -95,12 +95,12 @@ export default function Home() {
                 </h1>
 
                 {/* Subtitle - Punchy & Clean */}
-                <p className="text-[#a0a0a0] max-w-lg mx-auto font-light text-sm sm:text-base md:text-lg leading-relaxed tracking-wide mt-6 md:mt-8 hero-anim-desc opacity-0 transform translate-y-8">
+                <p className="text-[#a0a0a0] max-w-lg mx-auto font-light text-sm sm:text-base md:text-lg leading-relaxed tracking-wide mt-8 md:mt-10 hero-anim-desc opacity-0 transform translate-y-8">
                     {siteConfig.brand.tagline}
                 </p>
                 
                 {/* Hero Action Buttons */}
-                <div className="mt-10 md:mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 hero-anim-desc opacity-0 transform translate-y-8 w-full px-4 md:px-0">
+                <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 hero-anim-desc opacity-0 transform translate-y-8 w-full px-4 md:px-0">
                     <Link to="/signup" className="bg-white text-black hover:bg-gray-100 rounded-full px-8 py-4 text-xs md:text-sm uppercase tracking-widest font-bold shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-105 cursor-hover inline-flex items-center justify-center gap-2 w-full sm:w-auto min-w-[210px]">
                         Partner With Us ↗
                     </Link>
@@ -112,7 +112,7 @@ export default function Home() {
             </div>
 
             {/* Bottom Scroll Indicator */}
-            <div className="w-full max-w-7xl mx-auto flex justify-between items-center text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-gray-500 hero-anim-desc opacity-0 pt-6">
+            <div className="w-full max-w-7xl mx-auto flex justify-between items-center text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-gray-500 hero-anim-desc opacity-0 pt-10 md:pt-16">
                 <span>SCROLL TO EXPLORE</span>
                 <div className="w-12 h-[1px] bg-white/20"></div>
                 <span>2026 EDITION</span>

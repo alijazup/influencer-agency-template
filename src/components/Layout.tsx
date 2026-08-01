@@ -153,7 +153,7 @@ export function Layout() {
       {/* 2026 ARCHITECTURAL EDGE-TO-EDGE HEADER */}
       <nav className="fixed top-0 left-0 right-0 w-full z-50 px-6 py-5 md:px-12 md:py-6 flex justify-between items-center bg-gradient-to-b from-[#020202]/80 via-[#020202]/30 to-transparent backdrop-blur-sm transition-all duration-500 nav-animate">
           <Link to="/" className="flex items-center gap-3 cursor-hover">
-            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-5 sm:h-6 md:h-7 w-auto object-contain" />
+            <img src={siteConfig.brand.logoUrl} alt={siteConfig.brand.name} className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105" />
           </Link>
 
           {/* Desktop Nav */}
