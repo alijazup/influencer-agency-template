@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 70" width="160" height="70">
-  <!-- Bold Italicized Geometric Monogram TQ -->
-  <g transform="skewX(-14) translate(15, 8)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" width="100" height="60">
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
     <!-- T Letter -->
-    <path d="M 4 4 H 50 V 15 H 33 V 58 H 19 V 15 H 4 Z" fill="#ffffff" />
+    <path d="M 10 12 H 42" />
+    <path d="M 26 12 V 48" />
     <!-- Q Letter -->
-    <path d="M 52 31 C 52 16 64 4 82 4 C 100 4 112 16 112 31 C 112 43 103 52 90 55 L 102 65 H 86 L 76 56 C 72 57 68 57 63 57 C 52 57 52 45 52 31 Z M 66 31 C 66 39 73 45 82 45 C 91 45 98 39 98 31 C 98 23 91 16 82 16 C 73 16 66 23 66 31 Z" fill="#ffffff" />
+    <circle cx="68" cy="30" r="18" />
+    <path d="M 78 40 L 90 52" />
   </g>
 </svg>
