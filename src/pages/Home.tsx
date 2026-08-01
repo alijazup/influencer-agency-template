@@ -77,12 +77,12 @@ export default function Home() {
             <div className="text-center hero-text-wrap relative w-full max-w-7xl mx-auto flex flex-col items-center my-auto">
                 
                 {/* Eyebrow Label */}
-                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-gray-400 mb-6 hero-anim-desc opacity-0">
-                    CREATIVE DIRECTION & BRAND STRATEGY
+                <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-gray-400 mb-4 md:mb-6 hero-anim-desc opacity-0">
+                    {siteConfig.brand.name} • TALENT & INFLUENCE MANAGEMENT
                 </p>
 
                 {/* Hero Title */}
-                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] xl:text-[8.5rem] leading-[0.92] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[6rem] xl:text-[7.2rem] leading-[0.92] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
                     <div className="reveal-mask w-full flex justify-center pb-2">
                         <span className="reveal-text-inner hero-anim-title text-white">{siteConfig.brand.heroTitleLine1}</span>
                     </div>

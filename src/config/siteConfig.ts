@@ -34,8 +34,8 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   brand: {
     name: "TQ Media",
-    heroTitleLine1: "TQ",
-    heroTitleLine2: "Media",
+    heroTitleLine1: "WHERE BRANDS",
+    heroTitleLine2: "MEET VOICES.",
     tagline: "Where the right brands meet the right voices.",
     description: "Connecting visionary brands with culture-shifting talent and high-impact partnerships.",
     aboutHeading: "Where strategic brand partnerships meet influential voices.",

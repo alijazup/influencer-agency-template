@@ -51,25 +51,25 @@ export function ThreeBackground() {
       varying float vElevation;
 
       void main() {
-        // Ultra-Luxury Champagne Gold & Metallic Amber Shader Palette
-        vec3 baseBg        = vec3(0.015, 0.012, 0.008); // Deep Obsidian Charcoal
-        vec3 goldHighlight = vec3(0.960, 0.820, 0.280); // Champagne Gold Sheen (#f5d147)
-        vec3 amberWarmth   = vec3(0.850, 0.580, 0.120); // Warm Metallic Amber (#d9941f)
-        vec3 bronzeShadow  = vec3(0.320, 0.180, 0.040); // Deep Metallic Bronze Shadow
+        // Deep Oceanic Electric Blue / Azure / Cyan Shader Palette
+        vec3 baseBg      = vec3(0.010, 0.015, 0.030); // Deep oceanic dark
+        vec3 blueColor   = vec3(0.120, 0.420, 0.950); // Deep Cobalt / Electric Blue
+        vec3 azureColor  = vec3(0.150, 0.720, 0.980); // Bright Azure / Cyan Wave
+        vec3 indigoColor = vec3(0.250, 0.150, 0.650); // Deep Indigo Shadow
 
         float normalizedElevation = vElevation * 0.5 + 0.5;
         
-        // Multi-phase mathematical champagne gold blend
-        vec3 waveColor = mix(bronzeShadow, goldHighlight, sin(normalizedElevation * 3.14159 + uTime * 0.5) * 0.5 + 0.5);
-        waveColor = mix(waveColor, amberWarmth, cos(normalizedElevation * 2.2 - uTime * 0.35) * 0.5 + 0.5);
+        // Dynamic mathematical blue chromatic blend
+        vec3 waveColor = mix(indigoColor, blueColor, sin(normalizedElevation * 3.14159 + uTime * 0.5) * 0.5 + 0.5);
+        waveColor = mix(waveColor, azureColor, cos(normalizedElevation * 2.2 - uTime * 0.35) * 0.5 + 0.5);
 
-        // Specular rim light for silk liquid gold metallic waves
-        float rim = pow(1.0 - abs(vElevation), 2.2);
-        vec3 finalColor = mix(baseBg, waveColor, normalizedElevation * 0.42 + rim * 0.22);
+        // Specular sheen / rim lighting
+        float rim = pow(1.0 - abs(vElevation), 2.4);
+        vec3 finalColor = mix(baseBg, waveColor, normalizedElevation * 0.35 + rim * 0.18);
 
-        // Radial vignette for crisp focus and perfect text readability
+        // Radial vignette towards edges for crisp contrast focus
         float distFromCenter = length(vUv - vec2(0.5));
-        float vignette = smoothstep(0.88, 0.14, distFromCenter);
+        float vignette = smoothstep(0.85, 0.12, distFromCenter);
         finalColor *= vignette;
 
         gl_FragColor = vec4(finalColor, 0.95);
