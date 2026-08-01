@@ -33,19 +33,19 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   brand: {
-    name: "Brand Studio",
-    heroTitleLine1: "Creative",
-    heroTitleLine2: "Studio",
-    tagline: "Elevating digital presence through strategy and design.",
-    description: "Connecting visionary brands with engaging audience experiences.",
-    aboutHeading: "A modern digital agency designed for influence and growth.",
-    aboutDescription: "We engineer impactful campaigns and digital products. By combining creative direction and strategic positioning, we help brands reach new heights.",
+    name: "TQ Media",
+    heroTitleLine1: "TQ",
+    heroTitleLine2: "Media",
+    tagline: "Where the right brands meet the right voices.",
+    description: "Connecting visionary brands with culture-shifting talent and high-impact partnerships.",
+    aboutHeading: "Where strategic brand partnerships meet influential voices.",
+    aboutDescription: "TQ Media is a premier influencer and talent management agency. We orchestrate authentic brand collaborations and execute high-converting media campaigns across global platforms.",
     logoUrl: "/logo.svg"
   },
   contact: {
-    email: "contact@example.com",
-    location: "GLOBAL / REMOTE",
-    formActionUrl: "https://formsubmit.co/ajax/contact@example.com"
+    email: "partnerships@tqmedia.co.uk",
+    location: "LONDON / GLOBAL",
+    formActionUrl: "https://formsubmit.co/ajax/partnerships@tqmedia.co.uk"
   },
   socialLinks: {
     instagram: "https://instagram.com",
@@ -62,10 +62,10 @@ export const siteConfig: SiteConfig = {
       slug: "talent-management",
       title: "Talent Management",
       tagline: "Strategic representation and career direction.",
-      description: "Bespoke strategy and guidance for creators and brands. From partnership management to creative direction.",
+      description: "Bespoke strategy and guidance for top-tier creators and voices. From high-value brand partnerships to long-term career growth.",
       features: [
         "Partnership Strategy",
-        "Creative Direction",
+        "Creator Representation",
         "Brand Alignment",
         "Media Strategy"
       ]
@@ -73,23 +73,23 @@ export const siteConfig: SiteConfig = {
     {
       slug: "brand-campaigns",
       title: "Brand Campaigns",
-      tagline: "Engaging campaigns engineered for impact.",
-      description: "Data-backed multi-platform campaigns designed to captivate audiences and deliver real value.",
+      tagline: "High-converting multi-channel campaigns.",
+      description: "Data-driven influencer marketing campaigns designed to engage target audiences and deliver maximum return on ad spend.",
       features: [
         "Campaign Strategy",
         "Creative Direction",
-        "Analytics & Performance",
-        "Multi-Channel Reach"
+        "Performance Analytics",
+        "Multi-Platform Reach"
       ]
     },
     {
       slug: "campaign-strategy",
-      title: "Campaign Strategy",
-      tagline: "Data-driven positioning and storytelling.",
-      description: "End-to-end launch strategies that build authentic connection and maximize brand reach.",
+      title: "Strategic Positioning",
+      tagline: "Data-backed distribution and launch strategy.",
+      description: "End-to-end launch and campaign positioning that builds authentic connections between brands and key decision makers.",
       features: [
         "Audience Insights",
-        "Strategic Positioning",
+        "Market Positioning",
         "Distribution Planning",
         "Growth Optimization"
       ]
