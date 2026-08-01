@@ -100,7 +100,7 @@ export function ThreeBackground() {
         return;
       }
 
-      const geometry = new THREE.PlaneGeometry(6, 6, 128, 128);
+      const geometry = new THREE.PlaneGeometry(16, 16, 128, 128);
 
       material = new THREE.ShaderMaterial({
         vertexShader,

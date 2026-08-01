@@ -63,6 +63,8 @@ export function Layout() {
     const lenis = new Lenis({
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        touchMultiplier: 1.5,
+        smoothTouch: false
     });
     lenisRef.current = lenis;
     
@@ -247,10 +249,10 @@ export function Layout() {
       {/* FOOTER */}
       <section id="contact" className="min-h-[50vh] flex flex-col justify-between py-12 md:py-20 px-4 md:px-8 bg-transparent relative z-10 w-full">
           <div className="max-w-7xl mx-auto w-full glass-card rounded-[2rem] md:rounded-full p-6 sm:p-8 md:px-14 md:py-10 border border-white/15 flex flex-col md:flex-row justify-between items-center gap-6 backdrop-blur-xl">
-              <div className="w-full text-center md:text-left">
+              <div className="w-full text-center md:text-left overflow-hidden">
                   <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-400 mb-2">General Inquiries</p>
                   <a href={`mailto:${siteConfig.contact.email}`}
-                      className="block text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white hover:text-gray-300 transition-colors duration-300 brand-font footer-email cursor-hover tracking-tight">
+                      className="block text-sm min-[360px]:text-base sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white hover:text-gray-300 transition-colors duration-300 font-sans tracking-tight cursor-hover max-w-full truncate">
                       {siteConfig.contact.email}
                   </a>
               </div>
