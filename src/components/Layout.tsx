@@ -58,32 +58,27 @@ export function Layout() {
     window.addEventListener('mousemove', handleMouseMove);
 
     // --------------------------------------------------------
-    // LENIS LOGIC (Desktop Only - Native Touch on Mobile)
+    // LENIS + GSAP SMOOTH SCROLL INTEGRATION
     // --------------------------------------------------------
-    let lenisFrameId: number;
-    const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-    if (isDesktop) {
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        });
-        lenisRef.current = lenis;
-        
-        function raf(time: number) {
-            lenis.raf(time);
-            lenisFrameId = requestAnimationFrame(raf);
-        }
-        lenisFrameId = requestAnimationFrame(raf);
-    }
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+    });
+    lenisRef.current = lenis;
+    
+    lenis.on('scroll', ScrollTrigger.update);
+    const updateTicker = (time: number) => {
+        lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(updateTicker);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
         window.removeEventListener('mousemove', handleMouseMove);
-        if (lenisFrameId) cancelAnimationFrame(lenisFrameId);
-        if (lenisRef.current) {
-            lenisRef.current.destroy();
-            lenisRef.current = null;
-        }
+        gsap.ticker.remove(updateTicker);
+        lenis.destroy();
+        lenisRef.current = null;
     };
   }, []);
 

@@ -13,8 +13,6 @@ html, body {
   color: #ffffff;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* Only hide cursor on devices with a mouse — keep system cursor on touch/mobile */
