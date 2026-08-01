@@ -58,28 +58,32 @@ export function Layout() {
     window.addEventListener('mousemove', handleMouseMove);
 
     // --------------------------------------------------------
-    // LENIS LOGIC
+    // LENIS LOGIC (Desktop Only - Native Touch on Mobile)
     // --------------------------------------------------------
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        touchMultiplier: 1.5,
-        smoothTouch: false
-    });
-    lenisRef.current = lenis;
-    
     let lenisFrameId: number;
-    function raf(time: number) {
-        lenis.raf(time);
+    const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (isDesktop) {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        });
+        lenisRef.current = lenis;
+        
+        function raf(time: number) {
+            lenis.raf(time);
+            lenisFrameId = requestAnimationFrame(raf);
+        }
         lenisFrameId = requestAnimationFrame(raf);
     }
-    lenisFrameId = requestAnimationFrame(raf);
 
     return () => {
         window.removeEventListener('mousemove', handleMouseMove);
-        cancelAnimationFrame(lenisFrameId);
-        lenis.destroy();
-        lenisRef.current = null;
+        if (lenisFrameId) cancelAnimationFrame(lenisFrameId);
+        if (lenisRef.current) {
+            lenisRef.current.destroy();
+            lenisRef.current = null;
+        }
     };
   }, []);
 
