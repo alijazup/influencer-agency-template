@@ -36,8 +36,8 @@ export const siteConfig: SiteConfig = {
     name: "TQ Media",
     heroTitleLine1: "WHERE BRANDS",
     heroTitleLine2: "MEET VOICES.",
-    tagline: "Where the right brands meet the right voices.",
-    description: "Connecting visionary brands with culture-shifting talent and high-impact partnerships.",
+    tagline: "Connecting visionary brands with culture-shifting voices.",
+    description: "",
     aboutHeading: "Where strategic brand partnerships meet influential voices.",
     aboutDescription: "TQ Media is a premier influencer and talent management agency. We orchestrate authentic brand collaborations and execute high-converting media campaigns across global platforms.",
     logoUrl: "/logo.svg"

@@ -81,22 +81,22 @@ export default function Home() {
                     {siteConfig.brand.name} • TALENT & INFLUENCE MANAGEMENT
                 </p>
 
-                {/* Hero Title */}
-                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[6rem] xl:text-[7.2rem] leading-[0.92] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
+                {/* Hero Title - Clean 2-Line Architecture */}
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] xl:text-[6rem] leading-[0.92] font-extrabold uppercase tracking-tight brand-font flex flex-col items-center w-full max-w-full">
                     <div className="reveal-mask w-full flex justify-center pb-2">
-                        <span className="reveal-text-inner hero-anim-title text-white">{siteConfig.brand.heroTitleLine1}</span>
+                        <span className="reveal-text-inner hero-anim-title text-white whitespace-nowrap">{siteConfig.brand.heroTitleLine1}</span>
                     </div>
 
                     <div className="reveal-mask w-full flex justify-center mt-1 pb-2">
-                        <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover">
+                        <span className="liquid-metal reveal-text-inner hero-anim-title cursor-hover whitespace-nowrap">
                             {siteConfig.brand.heroTitleLine2}
                         </span>
                     </div>
                 </h1>
 
-                {/* Description */}
-                <p className="text-[#a0a0a0] max-w-2xl mx-auto font-light text-base sm:text-lg md:text-xl leading-relaxed tracking-wide mt-6 md:mt-8 hero-anim-desc opacity-0 transform translate-y-8">
-                    {siteConfig.brand.tagline} <br className="hidden md:block" /> {siteConfig.brand.description}
+                {/* Subtitle - Punchy & Clean */}
+                <p className="text-[#a0a0a0] max-w-lg mx-auto font-light text-sm sm:text-base md:text-lg leading-relaxed tracking-wide mt-6 md:mt-8 hero-anim-desc opacity-0 transform translate-y-8">
+                    {siteConfig.brand.tagline}
                 </p>
                 
                 {/* Hero Action Buttons */}
